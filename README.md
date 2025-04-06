@@ -15,8 +15,7 @@ This is a real-time chat application built using the MERN stack (MongoDB, Expres
 - React
 - Node.js
 - Socket.io
-- JWT (JSON Web Tokens)
-
+- JWT
 ## Installation:
 To run the project locally:
 
