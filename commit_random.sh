@@ -5,7 +5,7 @@ commit_day="2025-04-06"
 
 # Start and end time for commits (start at 4:30 AM, end at 10:00 PM)
 start_hour=4
-start_minute=30
+start_minute=20
 end_hour=22
 
 # Get all files/folders (excluding .git)
@@ -31,7 +31,8 @@ for file in $files; do
     second=$((RANDOM % 60))
 
     # Format the time
-    commit_time=$(printf "$commit_dayT%02d:%02d:%02d" $hour $minute_offset $second)
+    # Format the time to ISO 8601
+    commit_time=$(printf "%sT%02d:%02d:%02d" $commit_day $hour $minute_offset $second)
 
     # Create the commit with random timestamp
     GIT_AUTHOR_DATE="$commit_time" GIT_COMMITTER_DATE="$commit_time" \
